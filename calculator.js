@@ -6,12 +6,20 @@ app.get('/add/:num1/:num2', (req, res) => {
   let num1 = parseInt(req.params.num1)
   let num2 = parseInt(req.params.num2)
 
+  if(isNaN(num1) || isNaN(num2)) {
+    res.send('Please type a number!')
+  }
+
   res.send({num1: num1, num2: num2, result: num1 + num2})
 })
 
 app.get('/subtract/:num1/:num2', (req, res) => {
   let num1 = parseInt(req.params.num1)
   let num2 = parseInt(req.params.num2)
+
+  if(isNaN(num1) || isNaN(num2)) {
+    res.send('Please type a number!')
+  }
 
   res.send({num1: num1, num2: num2, result: num1 - num2})
 })
@@ -20,6 +28,10 @@ app.get('/multiply/:num1/:num2', (req, res) => {
   let num1 = parseInt(req.params.num1)
   let num2 = parseInt(req.params.num2)
 
+  if(isNaN(num1) || isNaN(num2)) {
+    res.send('Please type a number!')
+  }
+
   res.send({num1: num1, num2: num2, result: num1 * num2})
 })
 
@@ -27,6 +39,10 @@ app.get('/divide/:num1/:num2', (req, res) => {
   let num1 = parseInt(req.params.num1)
   let num2 = parseInt(req.params.num2)
 
+  if(isNaN(num1) || isNaN(num2)) {
+    res.send('Please type a number!')
+  }
+  
   res.send({num1: num1, num2: num2, result: num1 / num2})
 })
 
